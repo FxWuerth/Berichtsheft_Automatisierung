@@ -9,7 +9,7 @@ user_mail = os.environ["MAIL_USER"]
 passwort_mail = os.environ["MAIL_PASSWORD"]
 
 user ={
-   'max.mustermann@gmail.com': "Max Mustermann",
+   'max.musterman@gmail.com': "Max Mustermann",
    
 }
 
@@ -126,9 +126,9 @@ def setData(name):
 #verschieckt eine mail an den reciever
 def send_mail(receiver):
 # Deine Einstellungen
- smtp_server = user_mail
+ smtp_server = "smtp.gmail.com"
  smtp_port = 587
- absender = "test@gmail.com"
+ absender = user_mail
  empfänger = receiver
  passwort = passwort_mail 
  # Betreff und Inhalt
