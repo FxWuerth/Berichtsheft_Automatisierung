@@ -34,7 +34,7 @@ ber_num = kalenderwoche+17+(heute.isocalendar().year-2025)*52
 #Berufsschul kalenderwochen
 beruf = [38, 42, 46, 50, 3, 6, 10, 13, 17, 21, 26, 29]
 
-# zufällige zahlen für die einzelstunden erzeugen
+# zufällige zahlen für die einzelstunden als Vorschlag erzeugen
 stunden: list[float] =  []
 def getrandom(start, end):
     return random.randint(start,end)
@@ -45,7 +45,7 @@ def stundnenanzahl():
      ges += std
   return ges 
 
-def hole_stunden():   
+def erzeuge_stundenvorschlag():   
  while True:
    stunden.append(float(getrandom(1,4)))
    if stundnenanzahl() > 7:
@@ -96,7 +96,7 @@ def setData(name):
    temporary = {}
    if berufsschule != {"[Betrieb]": "Berufsschule"}:
     for num in range(5):
-     day_hours = hole_stunden()
+     day_hours = erzeuge_stundenVorschlag()
      stunden.clear()
      for i, h in enumerate(day_hours):
          temporary[f"[ts{i + num*3+1}]"] = h
